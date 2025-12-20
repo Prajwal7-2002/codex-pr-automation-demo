@@ -15,6 +15,16 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai
+
       - name: Extract latest diff
         run: |
           git diff HEAD~1 HEAD > diff.txt
