@@ -1,9 +1,9 @@
 import os
-from openai import OpenAI
+from groq import Groq
 
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+client = Groq(api_key=os.environ["GROQ_API_KEY"])
 
-with open("diff.txt") as f:
+with open("diff.txt", "r", encoding="utf-8") as f:
     diff = f.read()
 
 prompt = f"""
@@ -24,10 +24,15 @@ Diff:
 {diff}
 """
 
-response = client.responses.create(
-    model="gpt-4.1",
-    input=prompt
+response = client.chat.completions.create(
+    model="llama3-70b-8192",
+    messages=[
+        {"role": "user", "content": prompt}
+    ],
+    temperature=0.2,
 )
 
-with open("review.txt", "w") as f:
-    f.write(response.output_text)
+review_text = response.choices[0].message.content
+
+with open("review.txt", "w", encoding="utf-8") as f:
+    f.write(review_text)
