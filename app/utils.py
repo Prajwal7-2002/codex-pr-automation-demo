@@ -6,3 +6,6 @@ def add(a, b):
 
 def apply_discount(amount, discount):
     return amount - (amount * discount)
+
+def subtract(a, b):
+    return a - b
