@@ -9,3 +9,6 @@ def apply_discount(amount, discount):
 
 def subtract(a, b):
     return a - b
+
+def multiply(a, b):
+    return a * b

@@ -8,3 +8,6 @@ def test_apply_discount_basic():
 
 def test_add_negative():
     assert add(-1, -1) == -2
+
+def test_apply_discount_no_discount():
+    assert apply_discount(50, 0) == 50
