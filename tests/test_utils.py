@@ -15,3 +15,6 @@ def test_apply_discount_no_discount():
 
 def test_add_zero():
     assert add(0, 5) == 5
+
+def test_apply_discount_full():
+    assert apply_discount(200, 1) == 0
