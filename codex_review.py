@@ -18,7 +18,7 @@ Tasks:
 Rules:
 - Use only the provided diff
 - Do not assume missing context
-- If unsure, say so explicitly
+- If unsure, say so explicitly and be precise
 
 Diff:
 {diff}
