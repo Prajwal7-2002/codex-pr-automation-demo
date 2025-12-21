@@ -1,8 +1,6 @@
 def add(a, b):
     return a + b
 
-
-
 def apply_discount(amount, discount):
     return amount - (amount * discount)
 
@@ -16,3 +14,9 @@ def divide(a, b):
     if b == 0:
         raise ValueError("Cannot divide by zero")
     return a / b
+
+def power(base, exponent):
+    return base ** exponent
+
+def modulus(a, b):
+    return a % b
