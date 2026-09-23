@@ -18,3 +18,9 @@ def test_add_zero():
 
 def test_apply_discount_full():
     assert apply_discount(200, 1) == 0
+
+def test_add_floats():
+    assert add(2.5, 3.5) == 6.0
+
+def test_apply_discount_floats():
+    assert apply_discount(99.99, 0.15) == 84.9915
